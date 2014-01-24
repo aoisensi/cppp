@@ -21,10 +21,10 @@ struct Formula : public qi::grammar<Iterator, spirit::utree()> {
 	qi::rule<Iterator, spirit::utree()> expr;
 };
 
-int main(int argc, char* argv[]) {
+int main() {
 	Formula<std::string::iterator> formula;
-	for(int i=1; i<argc;i++) {
-		std::string str = argv[i];
+	std::string str;
+	while(std::cin >> str) {
 		std::cout << str << std::endl;
 		std::string::iterator itr = str.begin();
 		spirit::utree ut;
